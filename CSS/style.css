@@ -24,9 +24,44 @@
     
     
 }
-h
+
+
+.tanitimVideosuBaslik{
+   color:rgb(76, 0, 255);
+   text-align: center;
+   text-size-adjust: 15px;
+   margin-top: 100px;
+
+   
+}
+
+.tanitimVideosu
+{
+    width: 70%; /* Sayfa genişliğinin yarısı */
+    margin-left:14%;
+    margin-right:15%;
+    text-align: center; 
+    height:400px
+}
+.halkoyunlarıbaslik
 {
     text-align: center;
+    margin-top: 100px;
 }
+.halkoyunlari
+{
+    background-color: rgb(230, 223, 248); /* Gri arka plan rengi */
+    padding: 20px; /* İç boşluk */
+    border-radius: 10px; /* Köşe yuvarlama */
+    border: 1px solid #cccccc; /* Kenarlık */
+    margin: 20px 0; /* Dış boşluk */
+    margin: 0; /* Paragraf içi boşluk */
+    width:95%;
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+
  
 
