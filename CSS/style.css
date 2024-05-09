@@ -2,7 +2,7 @@
 {
  font-size: 15px;
  font-family: Arial, Helvetica, sans-serif;
- color: rgb(255, 255, 255);
+ color: rgb(166, 159, 159);
 
 }
 
@@ -32,28 +32,30 @@
    text-size-adjust: 15px;
    margin-top: 100px;
 
+
    
 }
 
 .tanitimVideosu
 {
     width: 70%; /* Sayfa genişliğinin yarısı */
-    margin-left:14%;
+    margin-left:12%;
     margin-right:15%;
     text-align: center; 
     height:400px
 }
 .halkoyunlarıbaslik
 {
+  color: black;
     text-align: center;
     margin-top: 100px;
 }
 .halkoyunlari
 {
-    background-color: rgb(230, 223, 248); /* Gri arka plan rengi */
+    background-color: rgb(211, 207, 220); /* Gri arka plan rengi */
     padding: 20px; /* İç boşluk */
     border-radius: 10px; /* Köşe yuvarlama */
-    border: 1px solid #cccccc; /* Kenarlık */
+    border: 1px solid  #cccccc; ; /* Kenarlık */
     margin: 20px 0; /* Dış boşluk */
     margin: 0; /* Paragraf içi boşluk */
     width:95%;
@@ -61,6 +63,43 @@
     margin-top: 40px;
 
 }
+.halkOyunlarıVideo
+{
+    margin-top: 20px;
+    width: 70%; /* Sayfa genişliğinin yarısı */
+    margin-left:13.5%;
+    margin-right:15%;
+    text-align: center; 
+    height:400px
+}
+
+.slider-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    width: 100%;
+    height: auto;
+  }
+  
+  #info {
+    margin-top: 20px;
+  }
+
+  .sehrimslider
+  {
+    margin-left: 5%;
+    margin-top:50px;
+    width: 90%;
+    height: 900px;
+  }
 
 
  
