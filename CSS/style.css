@@ -100,7 +100,38 @@
     width: 90%;
    
   }
-
+  #sehrimsliderp {
+    
+    background-color: #c3bdbd; /* Gri arka plan rengi */
+    padding: 20px; /* İç boşluk */
+    border-radius: 10px; /* Köşe yuvarlama */
+    border: 1px solid #b6a7a7; /* Kenarlık */
+    margin: 20px 0; /* Dış boşluk */
+    margin: 0; /* Paragraf içi boşluk */
+    width:90%;
+    margin-left: 5%;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#sehrimsliderdiv
+{
+    margin-top: 20px;
+    width: 100%;
+    
+}
+#seracılıkp {
+    
+  background-color: #726b6b; /* Gri arka plan rengi */
+  padding: 20px; /* İç boşluk */
+  border-radius: 10px; /* Köşe yuvarlama */
+  border: 1px solid #712a2a; /* Kenarlık */
+  margin: 20px 0; /* Dış boşluk */
+  margin: 0; /* Paragraf içi boşluk */
+  width:90%;
+  margin-left: 5%;
+  margin-bottom: 5px;
+  text-align: center;
+}
 
  
 
