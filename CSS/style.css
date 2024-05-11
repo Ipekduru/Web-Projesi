@@ -16,6 +16,7 @@
     margin: 20px 0; /* Dış boşluk */
     margin: 0; /* Paragraf içi boşluk */
     width:90%;
+    margin-left: 5%;
     text-align: center;
 }
 #sehrimdiv
@@ -39,7 +40,7 @@
 .tanitimVideosu
 {
     width: 70%; /* Sayfa genişliğinin yarısı */
-    margin-left:12%;
+    margin-left:15%;
     margin-right:15%;
     text-align: center; 
     height:400px
@@ -59,16 +60,17 @@
     margin: 20px 0; /* Dış boşluk */
     margin: 0; /* Paragraf içi boşluk */
     width:95%;
+    margin-left: 5%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
 
 }
 .halkOyunlarıVideo
 {
     margin-top: 20px;
     width: 70%; /* Sayfa genişliğinin yarısı */
-    margin-left:13.5%;
-    margin-right:15%;
+    margin-left:17%;
+
     text-align: center; 
     height:400px
 }
