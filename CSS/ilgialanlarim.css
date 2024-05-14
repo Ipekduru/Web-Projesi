@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(45deg, rgb(255, 40, 0), orange, rgb(12, 12, 59), violet);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 1800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.driver-info {
+  margin: 5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  flex: 1 1 calc(25% - 10px); /* Her satırda 4 sürücüyü sığdırmak için */
+  max-width: 300px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Kenarlara gölgelendirme ekleyin */
+}
+
+.driver-info img {
+  max-width: 100px;
+  border-radius: 50%;
+}
+
+.driver-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px; /* Her satırda 4 sürücüyü sığdırmak için maksimum genişlik */
+  margin: 20px 0; /* Üst ve alt boşluk */
+}

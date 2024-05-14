@@ -189,7 +189,93 @@ tr:nth-child(even) {
     background-color: transparent;
   }
 }
+.custom-navbarhakkımda {
+  background: linear-gradient(to right, #787c7d, #303439); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
 
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.background-image-container {
+  background-image: url('C:/Users/ipek duru/Web Proje/resimler/photo-1648716829567-162392a54b58sehrim giriş.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; /* Yüksekliği tüm ekran yüksekliği olacak şekilde ayarlar */
+  position: relative; /* İçerik yerleşimini yönetmek için */
+}
+.custom-navbarsehrim {
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
 
- 
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbartarihiyerler {
+  background: linear-gradient(to right, #312e60, #0c2d56); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbaryoreselyerler {
+  background: linear-gradient(to right, #e53b3b, #420606); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbarplajlar {
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbarmagaralar {
+  background: linear-gradient(to right, #3b583c, #afd77b); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbarOzgecmisim {
+  background: linear-gradient(to right, #f1cc7d, #7f7907); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
+.custom-navbarIlgialanlarımMenu {
+  background: linear-gradient(to right, #7f414ef7, #580912); /* Deniz mavisi renk geçişi */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px; /* Köşeleri yumuşatır */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+  padding: 10px; /* İç boşluk ekler */
+
+  font-family:Georgia, 'Times New Roman', Times, serif ; 
+  margin-top: 5px;
+}
 

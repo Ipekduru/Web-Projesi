@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const apiUrl = 'https://api.openf1.org/v1/drivers';
+    const apiUrl = 'https://api.openf1.org/v1/drivers?session_key=9158'; // Belirli bir session_key ile API çağrısı
   
     fetch(apiUrl)
       .then(response => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayDriverInfo(driverData) {
       const driverContainer = document.getElementById('driverContainer');
   
-      if (driverData.length === 0) {
+      if (!Array.isArray(driverData) || driverData.length === 0) {
         driverContainer.innerHTML = '<p>No driver data found.</p>';
         return;
       }

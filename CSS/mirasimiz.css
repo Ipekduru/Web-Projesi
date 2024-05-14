@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+
+    color: #3e0707;
     text-align: center;
     padding: 20px 0;
 }
@@ -44,3 +44,15 @@ table th {
     font-weight: bold;
     text-align: left;
 }
+
+  .custom-navbarmirasımız {
+    background: linear-gradient(to right, #051d5a, #610f0f); /* Deniz mavisi renk geçişi */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 15px; /* Köşeleri yumuşatır */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekler */
+    padding: 10px; /* İç boşluk ekler */
+  
+    font-family:Georgia, 'Times New Roman', Times, serif ; 
+    margin-top: 5px;
+  }
+  
