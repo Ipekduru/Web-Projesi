@@ -1,44 +1,48 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var data = null;
-  
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-  
-    xhr.addEventListener('readystatechange', function() {
-      if (this.readyState === this.DONE) {
-        if (this.status === 200) {
-          const response = JSON.parse(this.responseText);
-          displayMovies(response.result);
-        } else {
-          console.error('Error fetching data:', this.statusText);
-        }
-      }
-    });
-  
-    xhr.open('GET', 'https://api.collectapi.com/watching/imdb');
-    xhr.setRequestHeader('content-type', 'application/json');
-    xhr.setRequestHeader('authorization', 'https://collectapi.com/tr/api/id_5de4ed043bd77a29edcfeb67?tab=pricing'); // Replace 'your_token' with your actual API key
-  
-    xhr.send(data);
-  
-    function displayMovies(movies) {
-      const movieContainer = document.getElementById('movieContainer');
-  
-      movies.forEach(movie => {
-        const movieCard = document.createElement('div');
-        movieCard.className = 'movie-card';
-  
-        movieCard.innerHTML = `
-          <img src="${movie.img}" alt="${movie.name}">
-          <div class="movie-info">
-            <h2>${movie.name}</h2>
-            <p><strong>Year:</strong> ${movie.year}</p>
-            <p><strong>Rating:</strong> ${movie.rate}</p>
-            <a href="${movie.url}" target="_blank">View on IMDB</a>
-          </div>
-        `;
-  
-        movieContainer.appendChild(movieCard);
-      });
+const apiKey = "0f4d3f81e810296782b6e8cd364e6318";
+const baseUrl = "https://api.themoviedb.org/3";
+const searchEndpoint = "/search/movie";
+const query = "Batman";
+
+// API'ye GET isteği gönderen fonksiyon
+async function searchMovies() {
+    try {
+        const response = await fetch(`${baseUrl}${searchEndpoint}?query=${query}&api_key=${apiKey}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("API isteği sırasında bir hata oluştu:", error);
     }
-  });
+}
+
+// API'den gelen verileri işleyen ve HTML'e ekleyen fonksiyon
+async function handleApiResponse() {
+    const searchData = await searchMovies();
+    const moviesContainer = document.getElementById("movies");
+
+    // Her bir film için ayrı bir div oluştur
+    searchData.results.forEach(movie => {
+        const movieTitle = movie.title;
+        const movieOverview = movie.overview;
+
+        // Her film için bir div oluştur
+        const movieDiv = document.createElement("div");
+        movieDiv.classList.add("movie");
+
+        // Başlık ve özeti içeren paragrafları oluştur
+        const titleParagraph = document.createElement("p");
+        titleParagraph.textContent = movieTitle;
+
+        const overviewParagraph = document.createElement("p");
+        overviewParagraph.textContent = movieOverview;
+
+        // Paragrafları div'e ekle
+        movieDiv.appendChild(titleParagraph);
+        movieDiv.appendChild(overviewParagraph);
+
+        // Div'i moviesContainer'a ekle
+        moviesContainer.appendChild(movieDiv);
+    });
+}
+
+// Fonksiyonu çağır
+handleApiResponse();

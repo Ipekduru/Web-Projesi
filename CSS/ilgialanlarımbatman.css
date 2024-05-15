@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to bottom, black, gray);
+    margin: 0;
+    background-size: 400% 400%;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+}
+
+#movies {
+    background-color: rgba(255, 230, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    color: black;
+    margin-bottom: 10px;
+}
+.movie {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    text-align: center;
+}
+.background-container {
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.uploadvr.com%2Fbatman-arkham-shadow-announcement%2F&psig=AOvVaw013b9vTDj7ZF0yXpEMnWQh&ust=1715869021674000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNCPhbPsj4YDFQAAAAAdAAAAABAE');
+    background-size: cover; /* Arka plan resminin konteyneri kaplamasını sağlar */
+    background-position: center; /* Arka plan resminin ortalanmasını sağlar */
+  }

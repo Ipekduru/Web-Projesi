@@ -279,3 +279,8 @@ tr:nth-child(even) {
   margin-top: 5px;
 }
 
+.responsive-image {
+   padding-left: -10px;
+   width: 100%;
+    height: auto;
+}
