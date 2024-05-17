@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .contact-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-container h2 {
+            margin-bottom: 20px;
+        }
+        .contact-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-container input, .contact-container textarea, .contact-container select {
+            display: block;
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-container .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .contact-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .contact-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contactApp" class="contact-container">
+        <h2>İletişim Formu</h2>
+        <form id="contactForm" action="submit.php" method="post" @submit.prevent="submitForm">
+            <label for="name">İsim:</label>
+            <input type="text" id="name" v-model="name" name="name" required>
+            <div v-if="errors.name" class="error-message">{{ errors.name }}</div>
+
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" v-model="email" name="email" required>
+            <div v-if="errors.email" class="error-message">{{ errors.email }}</div>
+
+            <label for="topic">Konu:</label>
+            <select id="topic" v-model="topic" name="topic" required>
+                <option value="">Bir konu seçin</option>
+                <option value="support">Destek</option>
+                <option value="sales">Satış</option>
+                <option value="feedback">Geri Bildirim</option>
+            </select>
+            <div v-if="errors.topic" class="error-message">{{ errors.topic }}</div>
+
+            <label>Cinsiyet:</label>
+            <div class="radio-group">
+                <label for="male">
+                    <input type="radio" id="male" value="male" v-model="gender" name="gender" required> Erkek
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" value="female" v-model="gender" name="gender" required> Kadın
+                </label>
+                <label for="other">
+                    <input type="radio" id="other" value="other" v-model="gender" name="gender" required> Diğer
+                </label>
+            </div>
+            <div v-if="errors.gender" class="error-message">{{ errors.gender }}</div>
+
+            <label for="message">Mesaj:</label>
+            <textarea id="message" v-model="message" name="message" rows="4" cols="50" required></textarea>
+            <div v-if="errors.message" class="error-message">{{ errors.message }}</div>
+
+            <button type="button" @click="clearForm">Temizle</button>
+            <button type="button" @click="validateWithVue">Vue.js ile Kontrol Et</button>
+            <button type="button" @click="validateWithJS">JavaScript ile Kontrol Et</button>
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#contactApp',
+            data: {
+                name: '',
+                email: '',
+                topic: '',
+                gender: '',
+                message: '',
+                errors: {}
+            },
+            methods: {
+                validateWithVue: function() {
+                    this.errors = {};
+
+                    // İsim kontrolü
+                    if (!this.name) {
+                        this.errors.name = 'Lütfen isminizi girin.';
+                    }
+
+                    // E-posta kontrolü
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!this.email || !emailRegex.test(this.email)) {
+                        this.errors.email = 'Geçerli bir e-posta adresi girin.';
+                    }
+
+                    // Konu kontrolü
+                    if (!this.topic) {
+                        this.errors.topic = 'Lütfen bir konu seçin.';
+                    }
+
+                    // Cinsiyet kontrolü
+                    if (!this.gender) {
+                        this.errors.gender = 'Lütfen cinsiyetinizi seçin.';
+                    }
+
+                    // Mesaj kontrolü
+                    if (!this.message) {
+                        this.errors.message = 'Lütfen bir mesaj girin.';
+                    }
+
+                    if (Object.keys(this.errors).length === 0) {
+                        alert('Form başarıyla kontrol edildi.');
+                    }
+                },
+                validateWithJS: function() {
+                    this.errors = {};
+                    
+                    // İsim kontrolü
+                    var name = document.getElementById('name').value.trim();
+                    if (name === '') {
+                        this.errors.name = 'Lütfen isminizi girin.';
+                    }
+
+                    // E-posta kontrolü
+                    var email = document.getElementById('email').value.trim();
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        this.errors.email = 'Geçerli bir e-posta adresi girin.';
+                    }
+
+                    // Konu kontrolü
+                    var topic = document.getElementById('topic').value;
+                    if (topic === '') {
+                        this.errors.topic = 'Lütfen bir konu seçin.';
+                    }
+
+                    // Cinsiyet kontrolü
+                    var gender = document.querySelector('input[name="gender"]:checked');
+                    if (!gender) {
+                        this.errors.gender = 'Lütfen cinsiyetinizi seçin.';
+                    }
+
+                    // Mesaj kontrolü
+                    var message = document.getElementById('message').value.trim();
+                    if (message === '') {
+                        this.errors.message = 'Lütfen bir mesaj girin.';
+                    }
+
+                    if (Object.keys(this.errors).length === 0) {
+                        alert('Form başarıyla kontrol edildi.');
+                    } else {
+                        this.updateErrorMessages();
+                    }
+                },
+                updateErrorMessages: function() {
+                    this.$nextTick(() => {
+                        if (this.errors.name) document.getElementById('name').nextElementSibling.textContent = this.errors.name;
+                        if (this.errors.email) document.getElementById('email').nextElementSibling.textContent = this.errors.email;
+                        if (this.errors.topic) document.getElementById('topic').nextElementSibling.textContent = this.errors.topic;
+                        if (this.errors.gender) document.querySelector('.radio-group').nextElementSibling.textContent = this.errors.gender;
+                        if (this.errors.message) document.getElementById('message').nextElementSibling.textContent = this.errors.message;
+                    });
+                },
+                clearForm: function() {
+                    this.name = '';
+                    this.email = '';
+                    this.topic = '';
+                    this.gender = '';
+                    this.message = '';
+                    this.errors = {};
+                },
+                submitForm: function() {
+                    this.validateWithVue();
+                    if (Object.keys(this.errors).length === 0) {
+                        this.$nextTick(() => {
+                            document.getElementById('contactForm').submit();
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
