@@ -6,14 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Kullanıcı adı ve şifre boş mu kontrol et
     if (empty($username) || empty($password)) {
         echo "Kullanıcı adı ve şifre alanları boş geçilemez.";
-        header("refresh:2;url=girisYap.html");
+        header("refresh:2;url=login.html");
         exit();
     }
 
     // Kullanıcı adı e-posta formatında mı kontrol et
     if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
         echo "Geçerli bir e-posta adresi giriniz.";
-        header("refresh:2;url=girisYap.html");
+        header("refresh:2;url=login.html");
         exit();
     }
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("refresh:2;url=index.html");
     } else {
         echo "Hatalı giriş yaptınız, tekrar deneyiniz.";
-        header("refresh:2;url=girisYap.html");
+        header("refresh:2;url=login.html");
         exit();
     }
 } else {
