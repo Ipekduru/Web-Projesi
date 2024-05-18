@@ -42,3 +42,7 @@ function validateWithJavaScript() {
 
     alert('JavaScript ile form kontrolü başarılı.');
 }
+
+// Butonlara tıklanınca kontrol yap
+document.getElementById('validateVueButton').addEventListener('click', validateWithVue);
+document.getElementById('validateJSButton').addEventListener('click', validateWithJavaScript);
